@@ -91,7 +91,7 @@ Now, if you haven't yet, build the Docker image and run the following command (i
 
 ```
 # if you haven't yet, build the image and give it a name and tag of your liking
-$ docker build -t ${IMAGE}:${TAG}
+$ docker build -t ${IMAGE}:${TAG} .
 # run the backup command
 $ docker run --rm --network host -e CMD=backup -e AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" -e AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}" -e S3_BUCKET="${BUCKET}" -e S3_PREFIX="${PREFIX}" -e POSTGRESQL_DATABASE="defectdojo" -e POSTGRESQL_USER="defectdojo" -e POSTGRESQL_PASSWORD="${POSTGRESQL_PASSWORD}" -e POSTGRESQL_PORT=${LOCAL_PORT} -e POSTGRESQL_HOST="{localhost|host.docker.internal}" -e AES_KEY="${AES_KEY}" ${IMAGE}:${TAG}
 
